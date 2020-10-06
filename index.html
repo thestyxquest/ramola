@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ramola Noti</title>
+  </head>
+  <body>
+    <button onclick="notifyMe()">Notify me!</button>
+    <div id="msg"></div>
+
+    <script>
+      const sendNoti = () => {
+        var notification = new Notification("Shruti is waiting for you!!", {
+          icon: "./favicon.png",
+          body: "Find hot girls in your area!",
+        });
+        notification.onclick = function () {
+          window.open("./confirm.html");
+        };
+      };
+      document.addEventListener("DOMContentLoaded", function () {
+        if (!Notification) {
+          alert(
+            "Desktop notifications not available in your browser. Try Chromium."
+          );
+          return;
+        }
+
+        if (Notification.permission !== "granted")
+          Notification.requestPermission();
+      });
+
+      function notifyMe() {
+        if (Notification.permission !== "granted")
+          Notification.requestPermission();
+        else {
+          setTimeout(sendNoti, 10000)
+          document.getElementById('msg').innerText ='Notification set after 10 secs';
+        }
+      }
+    </script>
+  </body>
+</html>
