@@ -1,0 +1,20 @@
+{
+  "short_name": "Xomic",
+  "name": "Xomic",
+  "icons": [
+    {
+      "src": "LogoMini192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "LogoMini512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#22be61",
+  "background_color": "#ff514a"
+}
